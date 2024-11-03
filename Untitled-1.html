@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>谢寒雪生日快乐</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background-color:  #B8658D;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+  }
+  .login-container {
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  .login-container h2 {
+    text-align: center;
+  }
+  .login-form {
+    display: flex;
+    flex-direction: column;
+  }
+  .login-form input {
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  .login-form button {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #5cb85c;
+    color: white;
+    cursor: pointer;
+  }
+  .login-form button:hover {
+    background-color: #4cae4c;
+  }
+  .birthday-cake {
+    text-align: center;
+    margin-top: 20px;
+    display: none;
+  }
+  .heart {
+    position: absolute;
+    animation: beat 1s infinite;
+  }
+  @keyframes beat {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+  }
+</style>
+</head>
+<body>
+
+<div class="login-container">
+  <h2>谢寒雪生日快乐</h2>
+  <form class="login-form" onsubmit="return login();">
+    <input type="text" id="username" placeholder="xhx" required>
+    <input type="password" id="password" placeholder="1104" required>
+    <button type="submit">登录</button>
+  </form>
+</div>
+
+<div class="birthday-cake" style="display: none;">
+  <h2>谢寒雪生日快乐！</h2>
+  <audio controls autoplay>
+    <source src="birthday.mp3" type="audio/mpeg">
+  </audio>
+  <img src="cake.png" alt="生日蛋糕" width="300" height="300">
+  <div class="heart" style="top: 20px; left: 50px;"></div>
+  <div class="heart" style="top: 50px; left: 20px;"></div>
+  <div class="heart" style="top: 80px; left: 40px;"></div>
+</div>
+	
+<script>
+	function login() {
+  		var username = document.getElementById('username').value;
+  		var password = document.getElementById('password').value;
+
+	if (username === 'xhx' && password === '1104') {
+    	var cakeDiv = document.querySelector('.birthday-cake');
+    	cakeDiv.style.display = 'block';
+    	var loginDiv = document.querySelector('.login-container');
+    	loginDiv.style.display = 'none';
+    	return false; 
+  	} else {
+    	alert('用户名或密码错误');
+    	return false; 
+  		}
+	}
+</script>
+
+</body>
+</html>
